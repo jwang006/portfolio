@@ -38,7 +38,44 @@ footer{
 /* Flex layouts are one of the easier ways to style responsive layouts that work on all devices */
 /* https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox */
 
+.flex-container{
+  display: flex; /* all children will now be flex items */
+  flex-direction: row; /* other option is column */
+  flex-wrap: wrap; /* means the children will wrap to a new line */
+}
 
+.flex-item{
+  display: flex;
+  /* the following three items can be put on one line: https://developer.mozilla.org/en-US/docs/Web/CSS/flex */
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 25%; /*width of the box, take up a quarter of the parent's size*/
+  box-sizing: border-box; /*this means that we can add padding, line below, and still only take 25% width of parent*/
+  padding: 5px;
+}
+
+.flex-item a{
+  display: flex;
+  width: 100%;
+  height: 0;
+  padding: 30% 0;
+  background-image: url(../assets/images/lightgrey-line.jpeg); /*change the image to one of you choice */
+  background-position: center;
+  background-size: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color:#4f4f4f;
+  transition: all 0.2s; /* CSS transitions https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions */
+}
+
+/* want a different background image for each project? */
+/* try give each a tag a unique id in your HTML and then set different background images here*/
+/* EXAMPLE CSS: won't work if you just un-comment this:*/
+/* .flex-item a#my-special-id{
+  background-image: url(../assets/images/custom-image-name.jpeg); 
+} */
 .flex-container-unloading{
   display: flex; /* all children will now be flex items */
   flex-direction: row; /* other option is column */
@@ -53,8 +90,6 @@ footer{
   box-sizing: border-box; /*this means that we can add padding, line below, and still only take 25% width of parent*/
   padding: 5px;
 }
-
-
 .flex-item-uploading a{
   display: flex;
   width: 80%;
@@ -79,44 +114,6 @@ footer{
   background-color: white;
   padding:5px 10px;
  }
- 
- .flex-container{
-  display: flex; /* all children will now be flex items */
-  flex-direction: row; /* other option is column */
-  flex-wrap: wrap; /* means the children will wrap to a new line */
-}
- .flex-item{
-  display: flex;
-  /* the following three items can be put on one line: https://developer.mozilla.org/en-US/docs/Web/CSS/flex */
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 25%; /*width of the box, take up a quarter of the parent's size*/
-  box-sizing: border-box; /*this means that we can add padding, line below, and still only take 25% width of parent*/
-  padding: 5px;
-}
-.flex-item a{
-  display: flex;
-  width: 80%;
-  height: 0;
-  padding: 50% 0;
-  background-image: url(../assets/images/lightgrey-line.jpeg); /*change the image to one of you choice */
-  background-position: center;
-  background-size: 100%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  text-decoration: none;
-  color:#4f4f4f;
-  transition: all 0.2s; /* CSS transitions https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions */
-}
-/* want a different background image for each project? */
-/* try give each a tag a unique id in your HTML and then set different background images here*/
-/* EXAMPLE CSS: won't work if you just un-comment this:*/
-/* .flex-item a#my-special-id{
-  background-image: url(../assets/images/custom-image-name.jpeg); 
-} */
-
-
 .flex-item a:hover{
   color:#bbbbbb;
   background-size: 120%;
